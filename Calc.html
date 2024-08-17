@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "Calculator">
+     <div class  = "NC">
+      <div class ="Calculator_heading_1">
+           <input type="text" placeholder="0" class = "Output" id = "Output_ID">
+      </div>
+      <div class ="Calculator_heading_2">
+           <button onclick="display('1')">1</button>
+           <button onclick="display('2')">2</button>
+           <button onclick="display('3')">3</button>
+           <button onclick="display('4')">4</button>
+           <button onclick="display('5')">5</button>
+           <button onclick="display('6')">6</button>
+           <button onclick="display('7')">7</button>
+           <button onclick="display('8')">8</button>
+           <button onclick="display('9')">9</button>
+      </div>
+      <div class ="Calculator_heading_2in2">
+           <button class = "Zero" onclick="display('0')">0</button>
+      </div>
+      <div class ="Calculator_heading_3">
+           <button onclick="display('+')">+</button>
+           <button onclick="display('-')">-</button>
+           <button onclick="display('*')">×</button>
+           <button onclick="display('/')">÷</button>
+       </div>
+      <div class ="Calculator_heading_4">
+           <button class = "Equal" onclick="Calculation()">=</button>
+      </div>
+      <div class = "Black">
+      </div>
+     </div>
+    </div>
+</body>
+<style>
+.Calculator_heading_2{
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    width: 100%;
+    height: 85%;
+    margin-top: 80px;
+    
+
+}
+button{
+    transition: all 0.4s;
+}
+button:hover{
+    background-color: grey;
+    color:white;
+
+}
+.Calculator_heading_3{
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    width: 100%;
+    height: 85%;
+}
+
+.Calculator{
+    margin-left: 700px;
+    margin-top: 50px;
+    height: 60%;
+    border: 10px solid salmon;
+    width: 30%;
+    background-image: linear-gradient(black,rgb(112, 112, 112),rgb(197, 197, 197));
+    border-radius: 50px 50px;
+    position: relative;
+    animation: 3s calc ease-in-out 1;
+
+    
+}
+@keyframes calc{
+    0%{
+        scale: 0.3;
+        filter: blur(0.5rem);
+    }
+    100%{
+        scale: 1;
+    }
+}
+button{
+    height: 70px;
+}
+input{
+    font-size: 30px;
+    color: aliceblue;
+    border-radius: 30px 30px ;
+    background-color: rgb(36, 76, 255);
+    margin-right:20px;
+    width: 97.5%;
+}
+button{
+    font-size: 20px;
+    background-color: rgb(249, 131, 4);
+    border-radius: 50px 50px;
+}
+.Equal{
+    width: 100%;
+    background-color: rgb(219, 194, 1);
+}
+.Zero{
+    width: 33.3333334%;
+    margin-left: 153px; 
+    
+}
+.Calculator_heading_1{
+    border: solid rgb(26, 119, 30);
+    width: 80%;
+    margin-left: 9%;
+    margin-top: 50px;
+    border-radius: 30px 30px ;
+}
+.Output{
+    height: 80px;
+}
+.NC{
+    width: 80%;
+    margin-left: 9%;
+    
+}
+.Black{
+    margin-top: 100px;
+}
+</style>
+<script>
+    function display(X){
+    let output = document.getElementById('Output_ID')
+    output.value += X
+}
+function Calculation(){
+   let display = document.getElementById('Output_ID')
+   display.value = eval(display.value) 
+}
+</script>
+</html>
